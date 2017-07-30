@@ -9,7 +9,7 @@ do site do sqlite .
 2 - Colocar todos os arquivos no mesmo diretorio.  
 
 
-3 - Editar variaveis de ambiente  no windows 
+3 - Editar variaveis de ambiente  no windows e apontar para onde estao os arquivos do SqlLite 
 
 PATH = C:\Users\lprates\Desktop\sqllite\teste
 
