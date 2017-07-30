@@ -1,0 +1,88 @@
+
+
+
+1 - Baixar os pacotes  sqlite-dll-win32-x86-3190300 , sqlite-tools-win32-x86-3190300
+
+do site do sqlite .
+
+
+2 - Colocar todos os arquivos no mesmo diretorio.  
+
+
+3 - Editar variaveis de ambiente  no windows 
+
+PATH = C:\Users\lprates\Desktop\sqllite\teste
+
+
+4 - Executar SQL Lite por prompt de comando : 
+
+
+a -  sqlite3  
+
+b - .open "C:/Users/lprates/Desktop/sqllite/teste/teste1.db"
+
+
+c - .databases  - mostra banco de dados 
+
+CREATE TABLE COMPANY(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL
+);
+
+
+d - .tables - mostra tabelas 
+
+e - .schema COMPANY - mostra dados da tabela 
+
+
+
+5 - Insert de dados 
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (1, 'Paul', 32, 'California', 20000.00 );
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (2, 'Allen', 25, 'Texas', 15000.00 );
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 );
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (5, 'David', 27, 'Texas', 85000.00 );
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (6, 'Kim', 22, 'South-Hall', 45000.00 );
+INSERT INTO COMPANY VALUES (7, 'James', 24, 'Houston', 10000.00 );
+
+
+6 - Format saida da query : 
+
+.header on
+
+.mode column
+
+
+SELECT * FROM COMPANY;
+
+UPDATE COMPANY SET ADDRESS = 'Texas' WHERE ID = 6;
+
+DELETE FROM COMPANY WHERE ID = 7;
+
+
+7 - Insert outra tabela 
+
+INSERT INTO DEPARTMENT (ID, DEPT, EMP_ID)
+VALUES (1, 'IT Billing', 1 );
+INSERT INTO DEPARTMENT (ID, DEPT, EMP_ID)
+VALUES (2, 'Engineering', 2 );
+INSERT INTO DEPARTMENT (ID, DEPT, EMP_ID)
+VALUES (3, 'Finance', 7 );
+
+
+8 - Dump de banco de dados 
+
+sqlite3 teste1.db .dump > dump_de_teste.sql
+
+
+
